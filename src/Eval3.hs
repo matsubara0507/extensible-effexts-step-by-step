@@ -34,8 +34,8 @@ eval3 (Plus e1 e2)  = do
         (IntVal i1, IntVal i2) -> return $ IntVal (i1 + i2)
         _                      -> throwError "type error in addition"
 eval3 (Abs n e)     = do
-  env <- ask
-  return $ FunVal env n e
+    env <- ask
+    return $ FunVal env n e
 eval3 (App e1 e2)   = do
     val1 <- eval3 e1
     val2 <- eval3 e2
