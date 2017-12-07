@@ -15,11 +15,11 @@ import           Data.Maybe                     (fromJust)
 import           Exp
 
 type Eval4 a =
-  Eff '[ ReaderDef Env, EitherDef String, StateDef Integer ] a
+    Eff '[ ReaderDef Env, EitherDef String, StateDef Integer ] a
 
 runEval4 :: Env -> Integer -> Eval4 a -> (Either String a, Integer)
 runEval4 env st ev =
-  leaveEff . flip runStateDef st . runEitherDef . flip runReaderDef env $ ev
+    leaveEff . flip runStateDef st . runEitherDef . flip runReaderDef env $ ev
 
 -- |
 -- >>> runEval4 Map.empty 0 $ eval4 exampleExp

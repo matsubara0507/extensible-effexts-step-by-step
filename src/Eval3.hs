@@ -11,8 +11,7 @@ import qualified Data.Map                       as Map
 import           Data.Maybe                     (fromJust)
 import           Exp
 
-type Eval3 a =
-  Eff '[ ReaderDef Env, EitherDef String ] a
+type Eval3 a = Eff '[ ReaderDef Env, EitherDef String ] a
 
 runEval3 :: Env -> Eval3 a -> Either String a
 runEval3 env ev = leaveEff . runEitherDef . flip runReaderDef env $ ev
