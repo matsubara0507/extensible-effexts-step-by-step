@@ -1,0 +1,17 @@
+name:                extensible-effexts-step-by-step
+version:             0.1.0.0
+homepage:            https://github.com/matsubara0507/extensible-effexts-step-by-step#readme
+license:             BSD3
+author:              MATSUBARA Nobutada
+copyright:           2017 MATSUBARA Nobutada
+category:            Compilers/Interpreters
+extra-source-files:
+  - README.md
+
+dependencies:
+  - base >= 4.7 && < 5
+
+executables:
+  extensible-effexts-step-by-step:
+    source-dirs:      src
+    main:             Main.hs
