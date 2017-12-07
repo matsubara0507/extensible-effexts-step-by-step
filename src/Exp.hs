@@ -13,3 +13,6 @@ data Value  = IntVal Integer        -- values
             | FunVal Env Name Exp
             deriving (Show)
 type Env    = Map.Map Name Value    -- mapping from names to values
+
+exampleExp :: Exp
+exampleExp = Lit 12 `Plus` (App (Abs "x" (Var "x")) (Lit 4 `Plus` Lit 2))

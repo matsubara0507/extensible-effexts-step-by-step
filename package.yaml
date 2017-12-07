@@ -14,4 +14,11 @@ dependencies:
   - extensible
 
 library:
-  source-dirs: src
+  source-dirs:       src
+
+tests:
+  doctest:
+    main:            Doctest.hs
+    source-dirs:     test
+    dependencies:
+      - doctest

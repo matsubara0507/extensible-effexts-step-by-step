@@ -4,6 +4,9 @@ import qualified Data.Map   as Map
 import           Data.Maybe (fromJust)
 import           Exp
 
+-- |
+-- >>> eval0 Map.empty exampleExp
+-- IntVal 18
 eval0 :: Env -> Exp -> Value
 eval0 env (Lit i)       = IntVal i
 eval0 env (Var n)       = fromJust (Map.lookup n env)
